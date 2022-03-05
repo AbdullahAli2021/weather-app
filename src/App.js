@@ -46,16 +46,21 @@ function App() {
             onKeyPress={search}
           />        
         </div>
-        <div className="location-box">
-          <div className="location">Windsor, CA</div>
-          <div className="date">{dateBuilder(new Date())}</div>
-        </div>
-        <div className="weather-box">
-          <div className="temp">
-          15*C
+        {(typeof weather.main != "undefined") ? (
+          <div>
+            <div className="location-box">
+              <div className="location">Windsor, CA</div>
+              <div className="date">{dateBuilder(new Date())}</div>
+            </div>
+            <div className="weather-box">
+              <div className="temp">
+                {Math.round(weather.main)}°C
+              </div>
+              <div className="weather">{weather.weather[0].main}</div>
+            </div>
           </div>
-          <div className="weather">Sunny</div>
-        </div>
+        ) : ('')}
+        
       </main>
       
     </div>
