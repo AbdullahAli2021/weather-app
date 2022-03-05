@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import './App.css';
 const api = {
   key: '2b810a1878c74d39c25cb97d2d29f529',
@@ -29,7 +30,13 @@ function App() {
         <div className="location-box">
           <div className="location">Windsor, CA</div>
           <div className="date">{dateBuilder(new Date())}</div>
-        </div> 
+        </div>
+        <div className="weather-box">
+          <div className="temp">
+          15*C
+          </div>
+          <div className="weather">Sunny</div>
+        </div>
       </main>
       
     </div>
